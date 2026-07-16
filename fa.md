@@ -11,7 +11,9 @@
   <a href="https://github.com/monji024/roulette/stargazers"><img src="https://img.shields.io/github/stars/monji024/roulette?style=flat-square" alt="Stars"></a>
   <a href="https://github.com/monji024/roulette/network/members"><img src="https://img.shields.io/github/forks/monji024/roulette?style=flat-square" alt="Forks"></a>
   <a href="https://github.com/monji024/roulette/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-informational?style=flat-square" alt="License"></a>
+  ![Roulette](r.gif)
 </p>
+
 
 > شیش تا خونه، یه راستش. برگشت نداره.
 

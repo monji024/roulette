@@ -13,7 +13,7 @@
   <a href="https://github.com/monji024/roulette/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-informational?style=flat-square" alt="License"></a>
 </p>
 <p align="center">
-  <img src="./r.gif" alt="Roulette">
+  <img src="r.gif" alt="Roulette">
 </p>
 > شیش تا خونه، یه راستش. برگشت نداره.
 

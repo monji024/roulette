@@ -2,17 +2,15 @@
   <a href="README.md"><img src="https://img.shields.io/badge/lang-English-1f6feb?style=flat-square" alt="English"></a>
   <a href="fa.md"><img src="https://img.shields.io/badge/lang-فارسی-2ea043?style=flat-square" alt="فارسی"></a>
 </p>
-
 <p align="center">
-  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/State_flag_of_Iran_%281964%E2%80%931980%29.svg" width="220" alt="پرچم شیر و خورشید">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/State_flag_of_Iran_%281964%E2%80%931980%29.svg" width="220" alt="Lion and Sun flag">
 </p>
-
 <h1 align="center">ROULETTE</h1>
-
+ 
 <p align="center">
-  <a href="https://github.com/your-username/roulette/stargazers"><img src="https://img.shields.io/github/stars/your-username/roulette?style=flat-square" alt="Stars"></a>
-  <a href="https://github.com/your-username/roulette/network/members"><img src="https://img.shields.io/github/forks/your-username/roulette?style=flat-square" alt="Forks"></a>
-  <a href="https://github.com/your-username/roulette/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-informational?style=flat-square" alt="License"></a>
+  <a href="https://github.com/monji024/roulette/stargazers"><img src="https://img.shields.io/github/stars/monji024/roulette?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/monji024/roulette/network/members"><img src="https://img.shields.io/github/forks/monji024/roulette?style=flat-square" alt="Forks"></a>
+  <a href="https://github.com/monji024/roulette/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-informational?style=flat-square" alt="License"></a>
 </p>
 
 > شیش تا خونه، یه راستش. برگشت نداره.

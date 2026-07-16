@@ -1,0 +1,108 @@
+[INTRO]
+The room is smaller than you remember.
+A single lamp. A single table. A single chair.
+Somewhere, a clock keeps time no one asked it to keep.
+You did not come here to win. You came here to find out.
+The door behind you no longer feels like an exit.
+Six empty chambers. One that is not.
+The house does not need to cheat. The odds already work for it.
+
+[SPIN]
+The chamber rotates.
+Metal whispers against metal.
+Something clicks into place, and you are not told what.
+The cylinder spins longer than it should.
+For a moment, even the silence seems to be waiting.
+Randomness has never felt so personal.
+The weight in your hand has not changed. Your understanding of it has.
+
+[PRE_TRIGGER]
+One decision remains.
+Your hand does not shake. That will change soon, or it will not matter.
+The odds are listening.
+Six ways this ends well. One way it does not.
+This is the part no one rehearses for.
+Somewhere between courage and math, you make your choice.
+The terminal waits.
+
+[SURVIVE]
+Nothing happens. Everything happens.
+The hammer falls on an empty chamber.
+You are still here. That is not the same as being safe.
+Luck has not abandoned you. Yet.
+Your pulse returns first. Your thoughts, a moment later.
+Another round begins, whether you are ready or not.
+Survival is not a reward. It is a postponement.
+
+[DEATH]
+The chamber was not empty.
+The terminal falls silent.
+No further moves remain.
+Every survivor eventually becomes a statistic.
+The lamp flickers once, as if it noticed too.
+There is no undo for this kind of silence.
+Somewhere, a new entry is written that you will never read.
+
+[AMBIENT]
+Something changed.
+A draft moves through a room with no windows.
+The lights dim by a fraction no meter could measure.
+You hear a second heartbeat that is not yours.
+The walls seem closer than the last round.
+A number flickers on the screen that was not there before.
+For a moment, the game seems to be studying you back.
+
+[GLITCH]
+[WARNING] Signal integrity degraded — recalibrating...
+UNEXPECTED STATE TRANSITION DETECTED. CONTINUING ANYWAY.
+memory fragment recovered: "...don't spin it again..."
+connection to something is... listening
+[SYSTEM] An unrecognized process is observing this session.
+checksum mismatch: fate.dat
+0x000A: an unexplained pause in the record
+
+[OPPONENT_TURN]
+Across the table, your opponent's hand moves toward the revolver.
+It is not your turn. There is nothing to do but watch.
+Someone else's decision, someone else's silence.
+The table holds two players and one truth neither controls.
+Your opponent's breathing is the only sound in the room.
+
+[VICTORY]
+The table falls still. You are the only one left standing.
+The house, for once, has nothing left to say.
+You did not just survive. You outlasted the math itself.
+The silence after victory is different from every silence before it.
+Your name joins a short, dangerous list.
+
+[LAST_CHANCE]
+Your score was enough. Something was traded so you could keep breathing.
+The house takes its cut, and lets you live a little longer.
+Points bleed away instead of you.
+A price was paid. It was not paid in blood this time.
+Your winnings just bought you a second chance you did not ask for.
+The chamber was not empty — but your score was heavy enough to matter.
+This was your only reprieve. It will not come again.
+
+[RULES]
+Two players. One revolver. Six chambers. One bullet.
+Turns alternate. Every pull is real. Nothing here is simulated.
+Survive a pull, and the odds — and your score — grow.
+Score can be spent exactly once to cheat the chamber. Exactly once.
+There is no second Last Chance. Spend it wisely, or not at all.
+The game ends the moment someone is truly out of chances.
+The odds are listening. Every choice matters.
+
+[ROOM]
+The room waits for a second name to appear beside yours.
+A door has been left open. Someone, somewhere, is deciding whether to walk through it.
+The table has one empty chair left.
+Waiting is its own kind of tension.
+Somewhere on the network, a connection is forming.
+
+[FAREWELL]
+The lamp goes dark.
+The room forgets you were ever in it.
+Somewhere, the chamber is already spinning for someone else.
+Until next time — if there is one.
+The terminal closes. The odds remain.

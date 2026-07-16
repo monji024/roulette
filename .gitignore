@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Game runtime artifacts
+rolet.txt
+data/*.tmp
+data/.texts_history
+data/scores.corrupt.json
+
+# OS
+.DS_Store
+Thumbs.db

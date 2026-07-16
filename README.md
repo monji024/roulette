@@ -1,12 +1,21 @@
-# ROULETTE
+<p align="center">
+  <a href="README.md"><img src="https://img.shields.io/badge/lang-English-1f6feb?style=flat-square" alt="English"></a>
+  <a href="fa.md"><img src="https://img.shields.io/badge/lang-فارسی-2ea043?style=flat-square" alt="فارسی"></a>
+</p>
+
+<p align="center">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/State_flag_of_Iran_%281964%E2%80%931980%29.svg" width="220" alt="Lion and Sun flag">
+</p>
+
+<h1 align="center">ROULETTE</h1>
+
+<p align="center">
+  <a href="https://github.com/your-username/roulette/stargazers"><img src="https://img.shields.io/github/stars/your-username/roulette?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/your-username/roulette/network/members"><img src="https://img.shields.io/github/forks/your-username/roulette?style=flat-square" alt="Forks"></a>
+  <a href="https://github.com/your-username/roulette/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-informational?style=flat-square" alt="License"></a>
+</p>
 
 > Six chambers. One truth. No undo.
-
-A premium, atmosphere-first, **multiplayer-only** terminal game. Two
-players, one shared revolver, and a single question repeated every turn:
-will the next pull be the one. Written in Python (game logic, networking,
-UI) with a dedicated Ruby narrative layer (atmospheric text, typing
-effects, ASCII art) that gives the game its voice.
 
 ```
 ██████╗  ██████╗ ██╗   ██╗██╗     ███████╗████████╗████████╗███████╗
@@ -17,68 +26,78 @@ effects, ASCII art) that gives the game its voice.
 ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝   ╚═╝      ╚═╝   ╚══════╝
 ```
 
+**Six chambers. Six chances.**
+Don't be a coward — this game is winner-takes-all. Life or death.
+If you think you're brave enough, come play.
+
+If you like it, **star** the repo. If you want to build on it, **fork**
+it — the buttons are right there at the top of this page.
+
 ---
 
 ## Overview
 
-ROULETTE is a turn-based multiplayer terminal game. A single revolver —
-six chambers, one bullet — is shared between exactly two players over a
-live TCP connection. Turns are forced: there is no folding, no walking
-away. Each survived pull raises your score, slowly and deliberately, and
-that score is the only thing standing between you and a fatal shot — once
-you've earned enough of it, you can spend it to survive one shot you
-otherwise wouldn't have. Just once.
+ROULETTE is a **multiplayer-only** terminal game. Two players share one
+revolver, one live TCP connection, and a single question repeated every
+turn: will the next pull be the one? Written in Python, with a dedicated
+Ruby narrative layer giving the game its voice — flavor text, typing
+effects, ASCII art.
 
-Players find each other by **room name**: one player hosts a room, the
-other joins it by typing the same name, and the server pairs them
-together for an authoritative, real-time match.
+There is no folding, no walking away once a match begins. Every survived
+pull raises your score. Score is the only thing that can ever buy you a
+**Last Chance** — one single emergency survival, earned, not given, and
+usable exactly once per match.
 
-## Features
+## ⚠ Game Rules
 
-- **Multiplayer only, room-based matchmaking** — host a room with a name,
-  join it from anywhere with that same name; the server pairs players and
-  runs the match.
-- **A persistent, multi-room server** — `server/main.py` can host many
-  independent matches at once, each isolated in its own room.
-- **The Last Chance system** — each player can earn exactly *one*
+By launching and entering the game, **you accept these rules**:
+
+1. **Entering the game means you accept the rules.** No warning screen
+   comes twice — the rules screen is shown once, before you can host or
+   join, and that is your only notice.
+2. **You are not permitted to run this game on virtual machines.** This
+   is a played-straight, single-environment experience — it is not built
+   or intended to be run inside a VM.
+3. **Any form of cheating guarantees your loss.** There is no benefit to
+   tampering with the client or the odds — the server is authoritative
+   and treats detected tampering as an automatic loss for the offending
+   player.
+
+> اگه به خدا اعتقاد داری موقعی که خشاب رو سرته بگو نجاتت بده
+>
+> **"If you believe in God, when the cylinder is against your head — ask Him to save you."**
+
+## What Makes This Different
+
+- **Multiplayer only, room-based matchmaking.** Host a room under a
+  name, share that name, and the server pairs the two of you together
+  for an authoritative, real-time match. No bots. No practice mode.
+- **The Last Chance system.** Each player can earn exactly *one*
   emergency survival for the entire match. Score is checked before any
-  death is ever finalized; if you've earned enough, it's spent instead of
-  you.
-- **Deliberately scarce, streak-based scoring** — a small, flat amount of
+  death is ever finalized — if you've earned enough, it's spent instead
+  of you.
+- **Deliberately scarce, streak-based scoring.** A small, flat amount of
   score per survived pull, scaled by your own consecutive-survival
-  streak. Building enough for a Last Chance takes real, sustained risk.
-- **A rules screen before every session** — atmospheric, plain-English
-  rules are shown before you can host or join, so nobody sits down blind.
-- **A dedicated narrative engine** — all atmosphere (flavor text, typing
-  effects, ASCII banners, glitch effects) is generated by a separate Ruby
-  layer, cleanly decoupled from Python's game logic.
-- **Polished terminal UI** built on [Rich](https://github.com/Textualize/rich):
-  bordered panels, a live status bar, and a clean, dark, high-contrast
-  color palette.
-- **Persistent statistics** — wins, losses, best score, streaks, and full
-  match history (including room and opponent names) stored in
-  `data/scores.json`.
-- **A death record for every loss** — a personal, readable `rolet.txt`
-  report is generated at the project root the moment a match ends in
-  death, alongside a compact audit trail in `data/deaths.log`.
-- **A startup permissions check** — the game verifies it can write its
-  save data *before* a match begins, so a permissions problem surfaces
-  clearly instead of crashing mid-game. It performs no privilege
-  escalation and touches no system settings — only its own project
-  folder.
-- **Graceful degradation** — if Ruby isn't installed, the game still runs
-  using a small built-in fallback text set instead of crashing.
-- **Cryptographically strong randomness** — the bullet's chamber is chosen
-  with `secrets.randbelow`, not a seedable PRNG.
-
-## Screenshots
-
-> _Add terminal screenshots or asciinema recordings here._
-
-- `docs/screenshot-menu.png` — main menu
-- `docs/screenshot-rules.png` — the rules screen
-- `docs/screenshot-match.png` — a live match in progress
-- `docs/screenshot-death.png` — the death sequence
+  streak. Earning a Last Chance takes real, sustained risk — it cannot
+  be farmed.
+- **A rules screen before every session.** Plain-language rules are
+  shown before anyone can host or join, so nobody sits down blind.
+- **A dedicated narrative engine.** All atmosphere — flavor text, typing
+  effects, ASCII banners — is generated by a separate Ruby layer,
+  cleanly decoupled from the Python game logic.
+- **Persistent statistics.** Wins, losses, best score, streaks, and full
+  match history — including room and opponent names — are stored
+  between sessions.
+- **A death record for every loss.** A personal, readable report is
+  generated the moment a match ends in death, alongside a compact audit
+  trail of every death across every match.
+- **Cryptographically strong randomness.** The bullet's chamber is
+  chosen with a cryptographically secure random source, not a seedable
+  or predictable generator. The outcome cannot be predicted or
+  reverse-engineered.
+- **Fail soft, not hard.** A missing narrative layer, a dropped
+  connection, or a corrupted save file all degrade the experience
+  gracefully, with a clear message, instead of crashing the match.
 
 ## Installation
 
@@ -124,49 +143,21 @@ python client\main.py
 If Ruby isn't already installed, get it from
 [rubyinstaller.org](https://rubyinstaller.org).
 
-## Controls
+### Running a match
 
-| Key         | Action                                    |
-|-------------|--------------------------------------------|
-| `1`–`5`     | Select a main menu option                  |
-| `Enter`     | Pull the trigger on your turn / continue    |
+1. One player starts the game and chooses **Host a room**, picking a
+   room name and, optionally, starting a local server automatically.
+2. The other player starts the game, chooses **Join a room**, and enters
+   the same room name plus the host's address and port.
+3. Once both players are in the room, the match begins — the server is
+   authoritative from that point on.
 
-
-## Networking Overview
-
-ROULETTE uses a persistent, multi-room TCP server and a simple
-newline-delimited JSON protocol.
-
-**Hosting a room:**
-1. From the main menu, choose **Host a room**.
-2. Enter your name and a room name.
-3. Choose whether to start a local server automatically (the easiest
-   option for same-machine or LAN play) or host on a server you're
-   already running elsewhere.
-4. Share the room name, your address, and the port with the other player.
-
-**Joining a room:**
-1. From the main menu, choose **Join a room**.
-2. Enter your name, the same room name the host used, the host's
-   address, and the port.
-
-**Running a dedicated server** (for more than one room, or for players
-connecting from anywhere):
+To run a standalone server for more than one room, or for players
+connecting from different machines:
 
 ```bash
-python3 server/main.py
+python3 server/main.py --host 0.0.0.0 --port 5555
 ```
-
-The server keeps running and can host any number of rooms concurrently.
-Whoever creates a room name first "owns" it; a second `host` request for
-the same name is rejected with `room_error`, and a `join` request for a
-name that doesn't exist (or is already full) is rejected the same way.
-
-Once two players are in a room, the server is fully authoritative: it
-owns the revolver, resolves every trigger pull, enforces the one-time
-Last Chance rule per player, and streams live updates to both players.
-Losing the connection to the server or to your opponent ends the match
-cleanly rather than hanging.
 
 ## Architecture
 
@@ -178,7 +169,7 @@ roulette/
 │   └── main.py         # Persistent, multi-room authoritative match server
 ├── game/
 │   ├── revolver.py      # Pure revolver mechanics (spin / fire / odds)
-│   ├── online.py         # Client-side networking + Rich UI for matches
+│   ├── online.py         # Client-side networking + UI for matches
 │   ├── score.py            # Stats, Last Chance rules, death record artifacts
 │   └── narrator.py          # Bridge to the Ruby narrative/effects layer
 ├── scripts/
@@ -195,45 +186,31 @@ roulette/
 
 **Design principles:**
 
-- **Rooms, not raw pairing.** Players never need to coordinate connection
-  order — a room name is the only thing two players need to agree on in
-  advance.
-- **Authoritative server.** All randomness and rule enforcement — including
-  the one-time Last Chance check — happen on the server, before a death is
-  ever finalized. Clients only render state and send intent (`pull`).
-- **Separation of voice and logic.** Python never hard-codes flavor text.
-  Every atmospheric line, typing effect, and ASCII banner is requested
+- **Rooms, not raw pairing.** A room name is the only thing two players
+  need to agree on ahead of time — no connection-order choreography.
+- **Authoritative server.** All randomness and rule enforcement —
+  including the one-time Last Chance check — happen server-side, before
+  a death is ever finalized. Clients only render state and send intent
+  (`pull`). They don't get a vote.
+- **Separation of voice and logic.** Python never hard-codes flavor
+  text. Every line, every typing effect, every ASCII banner is requested
   from the Ruby layer through `game/narrator.py`, which shells out to
   `scripts/texts.rb` and `scripts/effects.rb`.
-- **Small, testable core.** `game/revolver.py` has no UI or I/O
-  dependencies at all, so the core mechanic can be tested in complete
-  isolation from everything else.
-- **Fail soft, not hard.** A missing Ruby interpreter, a dropped
-  connection, a corrupted save file, or a permissions problem all degrade
-  the experience gracefully — with a clear message — instead of crashing.
+- **Small, testable core.** `game/revolver.py` has zero UI or I/O
+  dependencies, so the core mechanic can be tested in total isolation
+  from the drama around it.
+- **Fail soft, not hard.** Missing Ruby, a dropped connection, a
+  corrupted save file, a permissions problem — all of it degrades
+  gracefully with a clear message instead of a crash and a shrug.
 
 ## A Note on Scope
 
 This project intentionally does **not** include any form of virtual
-machine or sandbox detection. That technique — silently changing behavior
-or exiting when an analysis environment is detected — is a hallmark of
-malware evasion, and implementing it isn't something this project takes
-on, even framed as a game joke. Everything else in the spec (room-based
-multiplayer, the Last Chance system, the rules screen, the startup
-permissions check) is implemented in full.
-
-## Development Notes
-
-- Run the server standalone for debugging: `python3 server/main.py --port 5555`
-- The Ruby scripts can be exercised directly:
-  ```bash
-  ruby scripts/texts.rb RULES
-  ruby scripts/effects.rb ascii TITLE
-  ruby scripts/effects.rb type "Testing" 0.02
-  ```
-- `data/scores.json` is safe to delete — it will be recreated on next launch.
-- `rolet.txt` is overwritten on every new death; it always reflects the
-  most recent loss, not a running history (use `data/deaths.log` for that).
+machine or sandbox detection. Silently changing behavior — or exiting —
+when an analysis environment is detected is a hallmark of malware
+evasion, and that is not something this project implements, even framed
+as a game joke. Rule 2 above is a stated condition of play, not a
+technical enforcement mechanism.
 
 ## License
 

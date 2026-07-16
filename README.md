@@ -203,15 +203,6 @@ roulette/
   corrupted save file, a permissions problem — all of it degrades
   gracefully with a clear message instead of a crash and a shrug.
 
-## A Note on Scope
-
-This project intentionally does **not** include any form of virtual
-machine or sandbox detection. Silently changing behavior — or exiting —
-when an analysis environment is detected is a hallmark of malware
-evasion, and that is not something this project implements, even framed
-as a game joke. Rule 2 above is a stated condition of play, not a
-technical enforcement mechanism.
-
 ## License
 
 MIT — see `LICENSE`.

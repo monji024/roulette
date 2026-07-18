@@ -157,7 +157,7 @@ To run a standalone server for more than one room, or for players
 connecting from different machines:
 
 ```bash
-python3 server/main.py --host 0.0.0.0 --port 5555
+python3 server/main.py
 ```
 
 ## Architecture

